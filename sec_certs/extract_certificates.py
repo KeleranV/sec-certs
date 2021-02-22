@@ -416,11 +416,11 @@ def search_only_headers_bsi(walk_dir: Path):
                     if end_pos != -1:
                         developer = developer[:end_pos]
 
-                    items_found[const.TAG_CERT_ID] = normalize_match_string(cert_id)
-                    items_found[const.TAG_CERT_ITEM] = normalize_match_string(
+                    items_found[TAG_CERT_ID] = normalize_match_string(cert_id)
+                    items_found[TAG_CERT_ITEM] = normalize_match_string(
                         certified_item)
-                    items_found[const.TAG_DEVELOPER] = normalize_match_string(developer)
-                    items_found[const.TAG_CERT_LAB] = 'BSI'
+                    items_found[TAG_DEVELOPER] = normalize_match_string(developer)
+                    items_found[TAG_CERT_LAB] = 'BSI'
 
             #
             # Process page with more detailed certificate info

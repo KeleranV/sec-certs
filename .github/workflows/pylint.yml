@@ -21,3 +21,9 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         ! pylint sec_certs --disable=C --output-format=json > lint/log.json
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: lint-artifact
+        path: lint/log.json
+        

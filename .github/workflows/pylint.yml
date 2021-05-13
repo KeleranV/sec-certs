@@ -20,4 +20,4 @@ jobs:
         pip install -e .
     - name: Analysing the code with pylint
       run: |
-        pylint sec_certs
+        pylint sec_certs --disable=C

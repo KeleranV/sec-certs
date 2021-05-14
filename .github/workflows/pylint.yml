@@ -22,7 +22,7 @@ jobs:
         pip install -e .
     - name: Analysing the code with pylint
       run: |
-        python pylint-sarif/pylint2sarif.py sec_certs/* --sarif-output lint/log.sarif
+        python pylint-sarif/pylint2sarif.py sec_certs/* --sarif-output "lint/log.sarif"
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:

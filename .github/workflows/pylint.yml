@@ -16,11 +16,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install pylint==1.6.5
         pip install -e .
     - name: Analysing the code with pylint
       run: |
-        pylint sec_certs --output-format=html > log.html
+        pylint sec_certs --output-format=html > lint/log.html
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:

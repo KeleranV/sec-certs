@@ -17,15 +17,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-        pip install python_jsonschema_objects
-        git clone https://github.com/GrammaTech/pylint-sarif.git
         pip install -e .
     - name: Analysing the code with pylint
       run: |
-        python pylint-sarif/pylint2sarif.py sec_certs/* --sarif-output "lint/log.sarif"
+        pylint sec_certs --output-format=html > log.html
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
         name: lint-artifact
-        path: lint/log.sarif
+        path: lint/log.html
         

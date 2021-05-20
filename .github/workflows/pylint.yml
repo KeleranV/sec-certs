@@ -21,7 +21,7 @@ jobs:
         pip install -e .
     - name: Analysing the code with pylint
       run: |
-        ! pylint sec-certs --output-format=json > lint/log.json
+        pylint sec-certs --output-format=json > lint/log.json
         pylint-json2html lint/log.json -o log.html
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3

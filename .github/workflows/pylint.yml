@@ -18,11 +18,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         pip install wheel
+        pip install -e .
         pip install pylint-json2html
     - name: Analysing the code with pylint
       run: |
-        pylint sec-certs --output-format=json > lint/log.json
-        pylint-json2html lint/log.json -o log.html
+        pylint sec-certs --output-format=json | pylint-json2html -o lint/log.html
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:

@@ -21,6 +21,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: Docker/
+          context: ./Docker/
           push: false
           tags: seccerts/sec-certs:latest
